@@ -21,22 +21,22 @@ import RemoveCircle from '@material-ui/icons/RemoveCircle';
 import AccountBalance from '@material-ui/icons/AccountBalance';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer.jsx';
-import GridItem from 'components/Grid/GridItem.jsx';
-import CustomInput from 'components/CustomInput/CustomInput.jsx';
-import Button from 'components/CustomButtons/Button.jsx';
-import Card from 'components/Card/Card.jsx';
-import CardHeader from 'components/Card/CardHeader.jsx';
-import CardText from 'components/Card/CardText.jsx';
-import CardIcon from 'components/Card/CardIcon.jsx';
-import CardBody from 'components/Card/CardBody.jsx';
-import Quote from 'components/Typography/Quote.jsx';
+import GridContainer from 'components/Grid/GridContainer';
+import GridItem from 'components/Grid/GridItem';
+import CustomInput from 'components/CustomInput/CustomInput';
+import Button from 'components/CustomButtons/Button';
+import Card from 'components/Card/Card';
+import CardHeader from 'components/Card/CardHeader';
+import CardText from 'components/Card/CardText';
+import CardIcon from 'components/Card/CardIcon';
+import CardBody from 'components/Card/CardBody';
+import Quote from 'components/Typography/Quote';
 
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
 import regularFormsStyle from 'assets/jss/regularFormsStyle';
-import switchStyle from 'assets/jss/customCheckboxRadioSwitch.jsx';
+import switchStyle from 'assets/jss/customCheckboxRadioSwitch';
 
 const FormObject = props => {
   const {

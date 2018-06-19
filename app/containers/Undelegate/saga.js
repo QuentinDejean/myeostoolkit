@@ -1,8 +1,8 @@
 import Eos from 'eosjs';
 import { takeLatest, call, put, select, all } from 'redux-saga/effects';
-import EosClient from 'containers/Scatter/selectors.js';
-import { makeSelectEosAccount as EosAccount } from 'containers/Scatter/selectors.js';
-import Form from './selectors.js';
+import EosClient from 'containers/Scatter/selectors';
+import { makeSelectEosAccount as EosAccount } from 'containers/Scatter/selectors';
+import Form from './selectors';
 import { DEFAULT_ACTION } from './constants';
 import { successNotification } from 'containers/Notification/actions';
 import { failureNotification } from 'containers/Notification/actions';

@@ -18,15 +18,15 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import AccountBalance from '@material-ui/icons/AccountBalance';
 
 // core components
-import GridContainer from 'components/Grid/GridContainer.jsx';
-import GridItem from 'components/Grid/GridItem.jsx';
-import Card from 'components/Card/Card.jsx';
-import CardBody from 'components/Card/CardBody.jsx';
-import CardHeader from 'components/Card/CardHeader.jsx';
-import CardIcon from 'components/Card/CardIcon.jsx';
-import Quote from 'components/Typography/Quote.jsx';
+import GridContainer from 'components/Grid/GridContainer';
+import GridItem from 'components/Grid/GridItem';
+import Card from 'components/Card/Card';
+import CardBody from 'components/Card/CardBody';
+import CardHeader from 'components/Card/CardHeader';
+import CardIcon from 'components/Card/CardIcon';
+import Quote from 'components/Typography/Quote';
 
-import userProfileStyles from './comingSoon.jsx';
+import userProfileStyles from './comingSoon';
 
 function Governance(props) {
   const { classes } = props;

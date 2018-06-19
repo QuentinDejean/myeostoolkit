@@ -8,9 +8,7 @@
  * the webpack process.
  */
 
-const {
-  join
-} = require('path');
+const { join } = require('path');
 const defaults = require('lodash/defaultsDeep');
 const webpack = require('webpack');
 const pkg = require(join(process.cwd(), 'package.json'));

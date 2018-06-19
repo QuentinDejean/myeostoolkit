@@ -5,20 +5,17 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { makeSelectEosAccount } from 'containers/Scatter/selectors';
+import TransferForm from 'components/TransferForm';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 import submitAction from './actions';
-import TransferForm from 'components/TransferForm';
-import { makeSelectEosAccount } from 'containers/Scatter/selectors';
 
 export class Transfer extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
@@ -27,7 +24,7 @@ export class Transfer extends React.Component {
     const { eosAccount, handleSubmit } = this.props;
     return (
       <div>
-        <TransferForm handleSubmit={handleSubmit} eosAccount={eosAccount} />
+        <TransferForm handleSubmit={handleSubmit} eosAccount={eosAccount} />{' '}
       </div>
     );
   }
@@ -52,8 +49,14 @@ const withConnect = connect(
   mapDispatchToProps
 );
 
-const withReducer = injectReducer({ key: 'Transfer', reducer });
-const withSaga = injectSaga({ key: 'Transfer', saga });
+const withReducer = injectReducer({
+  key: 'Transfer',
+  reducer,
+});
+const withSaga = injectSaga({
+  key: 'Transfer',
+  saga,
+});
 
 export default compose(
   withReducer,
