@@ -54,7 +54,7 @@ export class SearchAccount extends React.Component { // eslint-disable-line reac
 }
 
 SearchAccount.propTypes = {
-  //dispatch: PropTypes.func.isRequired,
+  // dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -69,7 +69,10 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 const withReducer = injectReducer({ key: 'SearchAccount', reducer });
 const withSaga = injectSaga({ key: 'SearchAccount', saga });
@@ -77,5 +80,5 @@ const withSaga = injectSaga({ key: 'SearchAccount', saga });
 export default compose(
   withReducer,
   withSaga,
-  withConnect,
+  withConnect
 )(SearchAccount);

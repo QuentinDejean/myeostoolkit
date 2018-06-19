@@ -3,12 +3,11 @@ import { createSelector } from 'reselect';
 /**
  * Direct selector to the delegate state domain
  */
-const selectDomain = (state) => state.get('SearchAccount');
+const selectDomain = state => state.get('SearchAccount');
 
 /**
  * Other specific selectors
  */
-
 
 /**
  * Default selector used by Delegate

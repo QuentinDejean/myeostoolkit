@@ -17,24 +17,24 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 import submitAction from './actions';
-import CreateProxyForm from 'components/CreateProxyForm'
-import {makeSelectEosAccount} from 'containers/Scatter/selectors';
+import CreateProxyForm from 'components/CreateProxyForm';
+import { makeSelectEosAccount } from 'containers/Scatter/selectors';
 
-
-export class CreateProxy extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class CreateProxy extends React.Component {
+  // eslint-disable-line react/prefer-stateless-function
 
   render() {
     const { eosAccount, handleSubmit } = this.props;
     return (
       <div>
-        <CreateProxyForm handleSubmit={handleSubmit} eosAccount={eosAccount}/>
+        <CreateProxyForm handleSubmit={handleSubmit} eosAccount={eosAccount} />
       </div>
     );
   }
 }
 
 CreateProxy.propTypes = {
-  //dispatch: PropTypes.func.isRequired,
+  // dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -43,11 +43,14 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleSubmit: (form) => dispatch(submitAction(form)),
+    handleSubmit: form => dispatch(submitAction(form)),
   };
 }
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 const withReducer = injectReducer({ key: 'CreateProxy', reducer });
 const withSaga = injectSaga({ key: 'CreateProxy', saga });
@@ -55,5 +58,5 @@ const withSaga = injectSaga({ key: 'CreateProxy', saga });
 export default compose(
   withReducer,
   withSaga,
-  withConnect,
+  withConnect
 )(CreateProxy);

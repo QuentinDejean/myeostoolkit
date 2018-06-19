@@ -21,12 +21,16 @@ function* performAction() {
       tr.undelegatebw({
         from: eosAccount,
         receiver: form.name,
-        unstake_net_quantity: Number(form.net).toFixed(4).toString() + ' EOS',
-        unstake_cpu_quantity: Number(form.cpu).toFixed(4).toString() + ' EOS',
-      })
+        unstake_net_quantity: `${Number(form.net)
+          .toFixed(4)
+          .toString()} EOS`,
+        unstake_cpu_quantity: `${Number(form.cpu)
+          .toFixed(4)
+          .toString()} EOS`,
+      });
     });
     yield put(successNotification(res.transaction_id));
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -40,7 +44,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }

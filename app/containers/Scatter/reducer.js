@@ -24,21 +24,19 @@ const initialState = fromJS({
 function scatterReducer(state = initialState, action) {
   switch (action.type) {
     case SCATTER_LOADED:
-      //console.log('Scatter reducer');
-      return state
-        .set('scatter',action.scatter);
+      // console.log('Scatter reducer');
+      return state.set('scatter', action.scatter);
     case EOSCLIENT_LOADED:
-      //console.log('Eos built');
-      return state
-        .set('eosClient',action.eosClient);
+      // console.log('Eos built');
+      return state.set('eosClient', action.eosClient);
     case ATTACHED_ACCOUNT:
       return state
-        .set('eosAccount',action.name)
-        .set('eosAuthority',action.authority);
+        .set('eosAccount', action.name)
+        .set('eosAuthority', action.authority);
     case DETACHED_ACCOUNT:
       return state
-        .set('eosAccount','Attach an Account')
-        .set('eosAuthority','');
+        .set('eosAccount', 'Attach an Account')
+        .set('eosAuthority', '');
     default:
       return state;
   }

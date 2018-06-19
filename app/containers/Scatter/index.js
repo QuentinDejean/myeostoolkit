@@ -22,7 +22,8 @@ import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
-export class Scatter extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class Scatter extends React.Component {
+  // eslint-disable-line react/prefer-stateless-function
 
   componentDidMount(){
     if(window.scatter) {
@@ -30,7 +31,7 @@ export class Scatter extends React.Component { // eslint-disable-line react/pref
       window.scatter = null;
     }
     document.addEventListener('scatterLoaded', scatterExtension => {
-      //console.log('Scatter connected')
+      // console.log('Scatter connected')
       this.props.onScatterLoaded(window.scatter);
       // Scatter will now be available from the window scope.
       // At this stage the connection to Scatter from the application is
@@ -52,12 +53,13 @@ export class Scatter extends React.Component { // eslint-disable-line react/pref
     } else {
       return ('Please install Scatter');
     }
+    return 'Please install Scatter';
   }
 }
 
-//TODO: Add prop types
+// TODO: Add prop types
 Scatter.propTypes = {
-  //dispatch: PropTypes.func.isRequired,
+  // dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -69,16 +71,19 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    onScatterLoaded: (scatter) => dispatch(scatterLoaded(scatter)),
+    onScatterLoaded: scatter => dispatch(scatterLoaded(scatter)),
   };
 }
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 const withReducer = injectReducer({ key: 'scatter', reducer });
 const withSaga = injectSaga({ key: 'scatter', saga });
 
 export default compose(
   withReducer,
   withSaga,
-  withConnect,
+  withConnect
 )(Scatter);

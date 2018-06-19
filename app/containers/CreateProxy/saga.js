@@ -20,11 +20,11 @@ function* performAction() {
     const res = yield eosClient.transaction(tr => {
       tr.regproxy({
         proxy: eosAccount,
-        isproxy: form.isProxy ? 1 : 0
-      })
+        isproxy: form.isProxy ? 1 : 0,
+      });
     });
     yield put(successNotification(res.transaction_id));
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -38,7 +38,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }

@@ -23,23 +23,26 @@ function* performAction() {
         name: form.name,
         owner: form.ownerKey,
         active: form.activeKey,
-      })
+      });
       tr.buyrambytes({
         payer: eosAccount,
         receiver: form.name,
-        bytes: Number(form.ram)
-      })
+        bytes: Number(form.ram),
+      });
       tr.delegatebw({
         from: eosAccount,
         receiver: form.name,
-        stake_net_quantity: Number(form.net).toFixed(4).toString() + ' EOS',
-        stake_cpu_quantity: Number(form.cpu).toFixed(4).toString() + ' EOS',
-        transfer: form.transfer ? 1 : 0
-      })
+        stake_net_quantity: `${Number(form.net)
+          .toFixed(4)
+          .toString()} EOS`,
+        stake_cpu_quantity: `${Number(form.cpu)
+          .toFixed(4)
+          .toString()} EOS`,
+        transfer: form.transfer ? 1 : 0,
+      });
     });
     yield put(successNotification(res.transaction_id));
-
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -53,7 +56,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }

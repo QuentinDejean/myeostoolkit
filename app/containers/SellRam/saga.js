@@ -20,11 +20,11 @@ function* performAction() {
     const res = yield eosClient.transaction(tr => {
       tr.sellram({
         account: eosAccount,
-        bytes: Number(form.ram)
-      })
+        bytes: Number(form.ram),
+      });
     });
     yield put(successNotification(res.transaction_id));
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -38,7 +38,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }

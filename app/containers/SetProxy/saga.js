@@ -21,10 +21,10 @@ function* performAction() {
       tr.voteproducer({
         voter: eosAccount,
         proxy: form.name,
-      })
-    })
+      });
+    });
     yield put(successNotification(res.transaction_id));
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -38,7 +38,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }

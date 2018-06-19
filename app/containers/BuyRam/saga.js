@@ -21,11 +21,13 @@ function* performAction() {
       tr.buyram({
         payer: eosAccount,
         receiver: form.name,
-        quant: Number(form.quantity).toFixed(4).toString() + ' EOS',
-      })
+        quant: `${Number(form.quantity)
+          .toFixed(4)
+          .toString()} EOS`,
+      });
     });
     yield put(successNotification(res.transaction_id));
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -39,7 +41,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }

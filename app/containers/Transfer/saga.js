@@ -18,14 +18,16 @@ function* performAction() {
   yield put(loadingNotification());
   try {
     const res = yield eosClient.transfer({
-        account: 'eosio.token',
-        from: eosAccount,
-        to: form.name,
-        quantity: Number(form.quantity).toFixed(4).toString() + ' EOS',
-        memo: form.memo,
+      account: 'eosio.token',
+      from: eosAccount,
+      to: form.name,
+      quantity: `${Number(form.quantity)
+        .toFixed(4)
+        .toString()} EOS`,
+      memo: form.memo,
     });
     yield put(successNotification(res.transaction_id));
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -39,7 +41,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }
