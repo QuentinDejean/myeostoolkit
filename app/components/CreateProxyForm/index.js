@@ -111,8 +111,8 @@ const FormObject = props => {
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
-            By executing this action you are agreeing to the EOS constitution
-            and this actions associated ricardian contract.
+            By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
+            contract.
           </p>
         </GridItem>
       </GridContainer>
@@ -145,13 +145,7 @@ const CreateProxyForm = props => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
-              render={formikProps => (
-                <FormObject
-                  {...formikProps}
-                  eosAccount={eosAccount}
-                  classes={classes}
-                />
-              )}
+              render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
           </CardBody>
         </Card>

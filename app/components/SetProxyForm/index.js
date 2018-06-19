@@ -100,8 +100,8 @@ const FormObject = props => {
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
-            By executing this action you are agreeing to the EOS constitution
-            and this actions associated ricardian contract.
+            By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
+            contract.
           </p>
         </GridItem>
       </GridContainer>
@@ -136,13 +136,7 @@ const SetProxyForm = props => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
-              render={formikProps => (
-                <FormObject
-                  {...formikProps}
-                  eosAccount={eosAccount}
-                  classes={classes}
-                />
-              )}
+              render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
           </CardBody>
         </Card>
@@ -157,30 +151,24 @@ const SetProxyForm = props => {
           </CardHeader>
           <CardBody>
             <p>
-              The intent of the {'{ voteproducer }'} action is to cast a valid
-              vote for up to 30 BP candidates.
+              The intent of the {'{ voteproducer }'} action is to cast a valid vote for up to 30 BP candidates.
               <br />
               <br />
-              As an authorized party I {'{ signer }'} wish to vote on behalf of{' '}
-              {'{ voter }'} in favor of the block producer candidates{' '}
-              {'{ producers }'} with a voting weight equal to all tokens
-              currently owned by {'{ voter }'} and staked for CPU or bandwidth.
+              As an authorized party I {'{ signer }'} wish to vote on behalf of {'{ voter }'} in favor of the block
+              producer candidates {'{ producers }'} with a voting weight equal to all tokens currently owned by{' '}
+              {'{ voter }'} and staked for CPU or bandwidth.
               <br />
               <br />
-              If I am not the beneficial owner of these shares I stipulate I
-              have proof that I’ve been authorized to vote these shares by their
-              beneficial owner(s).
+              If I am not the beneficial owner of these shares I stipulate I have proof that I’ve been authorized to
+              vote these shares by their beneficial owner(s).
               <br />
               <br />
-              I stipulate I have not and will not accept anything of value in
-              exchange for these votes, on penalty of confiscation of these
-              tokens, and other penalties.
+              I stipulate I have not and will not accept anything of value in exchange for these votes, on penalty of
+              confiscation of these tokens, and other penalties.
               <br />
               <br />
-              I acknowledge that using any system of automatic voting,
-              re-voting, or vote refreshing, or allowing such a system to be
-              used on my behalf or on behalf of another, is forbidden and doing
-              so violates this contract.
+              I acknowledge that using any system of automatic voting, re-voting, or vote refreshing, or allowing such a
+              system to be used on my behalf or on behalf of another, is forbidden and doing so violates this contract.
             </p>
           </CardBody>
         </Card>

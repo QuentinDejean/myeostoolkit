@@ -64,10 +64,11 @@
       "error", {
         "bracketSpacing": true,
         "jsxBracketSameLine": true,
+        "printWidth": 120,
         "singleQuote": true,
         "trailingComma": "es5"
-    }
-  ],
+      }
+    ],
     "react/forbid-prop-types": 0,
     "react/jsx-first-prop-new-line": [
       2,

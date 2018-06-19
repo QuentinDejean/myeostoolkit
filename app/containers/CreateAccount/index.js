@@ -27,10 +27,7 @@ export class CreateAccount extends React.Component {
     const { eosAccount, handleSubmit } = this.props;
     return (
       <div>
-        <CreateAccountForm
-          handleSubmit={handleSubmit}
-          eosAccount={eosAccount}
-        />
+        <CreateAccountForm handleSubmit={handleSubmit} eosAccount={eosAccount} />
       </div>
     );
   }

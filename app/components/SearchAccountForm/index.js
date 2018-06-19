@@ -58,9 +58,7 @@ const SearchAccountForm = props => {
                 name: '',
               }}
               onSubmit={handleAccountName}
-              render={formikProps => (
-                <Account {...formikProps} classes={classes} />
-              )}
+              render={formikProps => <Account {...formikProps} classes={classes} />}
             />
           </CardBody>
         </Card>
@@ -79,9 +77,7 @@ const SearchAccountForm = props => {
                 publicKey: '',
               }}
               onSubmit={handlePublicKey}
-              render={formikProps => (
-                <PubicKey {...formikProps} classes={classes} />
-              )}
+              render={formikProps => <PubicKey {...formikProps} classes={classes} />}
             />
           </CardBody>
         </Card>

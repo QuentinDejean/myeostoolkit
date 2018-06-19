@@ -99,8 +99,8 @@ const FormObject = props => {
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
-            By executing this action you are agreeing to the EOS constitution
-            and this actions associated ricardian contract.
+            By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
+            contract.
           </p>
         </GridItem>
       </GridContainer>
@@ -137,13 +137,7 @@ const CreateAccountForm = props => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
-              render={formikProps => (
-                <FormObject
-                  {...formikProps}
-                  eosAccount={eosAccount}
-                  classes={classes}
-                />
-              )}
+              render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
           </CardBody>
         </Card>
@@ -161,8 +155,8 @@ const CreateAccountForm = props => {
               The {'{ sellram }'} action sells unused RAM for tokens.
               <br />
               <br />
-              As an authorized party I {'{ signer }'} wish to sell {'{ bytes }'}{' '}
-              of unused RAM from account {'{ account }'}.
+              As an authorized party I {'{ signer }'} wish to sell {'{ bytes }'} of unused RAM from account{' '}
+              {'{ account }'}.
             </p>
           </CardBody>
         </Card>

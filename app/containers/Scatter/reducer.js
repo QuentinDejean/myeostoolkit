@@ -30,13 +30,9 @@ function scatterReducer(state = initialState, action) {
       // console.log('Eos built');
       return state.set('eosClient', action.eosClient);
     case ATTACHED_ACCOUNT:
-      return state
-        .set('eosAccount', action.name)
-        .set('eosAuthority', action.authority);
+      return state.set('eosAccount', action.name).set('eosAuthority', action.authority);
     case DETACHED_ACCOUNT:
-      return state
-        .set('eosAccount', 'Attach an Account')
-        .set('eosAuthority', '');
+      return state.set('eosAccount', 'Attach an Account').set('eosAuthority', '');
     default:
       return state;
   }

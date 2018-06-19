@@ -13,8 +13,7 @@ const selectDomain = state => state.get('BuyRam');
  * Default selector used by Delegate
  */
 
-const makeSelectForm = () =>
-  createSelector(selectDomain, substate => substate.get('form'));
+const makeSelectForm = () => createSelector(selectDomain, substate => substate.get('form'));
 
 export default makeSelectForm;
 export { selectDomain, makeSelectForm };

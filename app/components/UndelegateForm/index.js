@@ -135,8 +135,8 @@ const FormObject = props => {
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
-            By executing this action you are agreeing to the EOS constitution
-            and this actions associated ricardian contract.
+            By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
+            contract.
           </p>
         </GridItem>
       </GridContainer>
@@ -169,10 +169,7 @@ const UndelegateForm = props => {
             </h4>
           </CardHeader>
           <CardBody>
-            <h5>
-              Unstaking takes three days. Unstaking lowers your vote weight
-              immediately
-            </h5>
+            <h5>Unstaking takes three days. Unstaking lowers your vote weight immediately</h5>
             <Formik
               initialValues={{
                 creator: '',
@@ -183,13 +180,7 @@ const UndelegateForm = props => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
-              render={formikProps => (
-                <FormObject
-                  {...formikProps}
-                  eosAccount={eosAccount}
-                  classes={classes}
-                />
-              )}
+              render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
           </CardBody>
         </Card>
@@ -204,20 +195,16 @@ const UndelegateForm = props => {
           </CardHeader>
           <CardBody>
             <p>
-              The intent of the {'{ undelegatebw }'} action is to unstake tokens
-              from CPU and/or bandwidth.
+              The intent of the {'{ undelegatebw }'} action is to unstake tokens from CPU and/or bandwidth.
               <br />
               <br />
-              As an authorized party I {'{ signer }'} wish to unstake{' '}
-              {'{ unstake_cpu_quantity }'} from CPU and{' '}
-              {'{ unstake_net_quantity }'} from bandwidth from the tokens owned
-              by {'{ from }'} previously delegated for the use of delegatee{' '}
-              {'{ to }'}.
+              As an authorized party I {'{ signer }'} wish to unstake {'{ unstake_cpu_quantity }'} from CPU and{' '}
+              {'{ unstake_net_quantity }'} from bandwidth from the tokens owned by {'{ from }'} previously delegated for
+              the use of delegatee {'{ to }'}.
               <br />
               <br />
-              If I as signer am not the beneficial owner of these tokens I
-              stipulate I have proof that I’ve been authorized to take this
-              action by their beneficial owner(s).
+              If I as signer am not the beneficial owner of these tokens I stipulate I have proof that I’ve been
+              authorized to take this action by their beneficial owner(s).
             </p>
           </CardBody>
         </Card>

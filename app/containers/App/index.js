@@ -14,9 +14,7 @@ export default function App() {
     <Router history={hist}>
       <Switch>
         {indexRoutes.map((prop, key) => {
-          return (
-            <Route path={prop.path} component={prop.component} key={key} />
-          );
+          return <Route path={prop.path} component={prop.component} key={key} />;
         })}
       </Switch>
     </Router>

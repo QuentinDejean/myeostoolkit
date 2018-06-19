@@ -44,10 +44,7 @@ function UserProfile(props) {
               </h4>
             </CardHeader>
             <CardBody>
-              <Quote
-                text="Rome wasn't built in a day"
-                author="Usually a smartass"
-              />
+              <Quote text="Rome wasn't built in a day" author="Usually a smartass" />
             </CardBody>
           </Card>
         </GridItem>

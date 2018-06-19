@@ -135,8 +135,8 @@ const FormObject = props => {
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
-            By executing this action you are agreeing to the EOS constitution
-            and this actions associated ricardian contract.
+            By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
+            contract.
           </p>
         </GridItem>
       </GridContainer>
@@ -175,13 +175,7 @@ const TransferForm = props => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
-              render={formikProps => (
-                <FormObject
-                  {...formikProps}
-                  eosAccount={eosAccount}
-                  classes={classes}
-                />
-              )}
+              render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
           </CardBody>
         </Card>
@@ -196,26 +190,21 @@ const TransferForm = props => {
           </CardHeader>
           <CardBody>
             <p>
-              I, {'{from}'}, certify the following to be true to the best of my
-              knowledge:
+              I, {'{from}'}, certify the following to be true to the best of my knowledge:
               <br />
               <br />
-              1. I certify that {'{quantity}'} is not the proceeds of fraudulent
-              or violent activities.<br />
-              2. I certify that, to the best of my knowledge, {'{to}'} is not
-              supporting initiation of violence against others.<br />
-              3. I have disclosed any contractual terms & conditions with
-              respect to {'{quantity}'} to {'{to}'}.
+              1. I certify that {'{quantity}'} is not the proceeds of fraudulent or violent activities.<br />
+              2. I certify that, to the best of my knowledge, {'{to}'} is not supporting initiation of violence against
+              others.<br />
+              3. I have disclosed any contractual terms & conditions with respect to {'{quantity}'} to {'{to}'}.
               <br />
               <br />
-              I understand that funds transfers are not reversible after the{' '}
-              {'{transaction.delay}'} seconds or other delay as configured by{' '}
-              {'{from}'}'s permissions.
+              I understand that funds transfers are not reversible after the {'{transaction.delay}'} seconds or other
+              delay as configured by {'{from}'}'s permissions.
               <br />
               <br />
-              If this action fails to be irreversibly confirmed after receiving
-              goods or services from '{'{to}'}', I agree to either return the
-              goods or services or resend {'{quantity}'} in a timely manner.
+              If this action fails to be irreversibly confirmed after receiving goods or services from '{'{to}'}', I
+              agree to either return the goods or services or resend {'{quantity}'} in a timely manner.
             </p>
           </CardBody>
         </Card>

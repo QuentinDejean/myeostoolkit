@@ -80,9 +80,5 @@ function* watchScatterRemove() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchScatterLoaded(),
-    watchScatterConnect(),
-    watchScatterRemove(),
-  ]);
+  yield all([watchScatterLoaded(), watchScatterConnect(), watchScatterRemove()]);
 }

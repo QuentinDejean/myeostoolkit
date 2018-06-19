@@ -220,8 +220,8 @@ const FormObject = props => {
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
-            By executing this action you are agreeing to the EOS constitution
-            and this actions associated ricardian contract.
+            By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
+            contract.
           </p>
         </GridItem>
       </GridContainer>
@@ -276,13 +276,7 @@ const CreateAccountForm = props => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
-              render={formikProps => (
-                <FormObject
-                  {...formikProps}
-                  eosAccount={eosAccount}
-                  classes={classes}
-                />
-              )}
+              render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
           </CardBody>
         </Card>
@@ -300,11 +294,9 @@ const CreateAccountForm = props => {
               The <i>newaccount</i> action creates a new account.
               <br />
               <br />
-              As an authorized party I <i>signer</i> wish to exercise the
-              authority of <i>creator</i> to create a new account on this system
-              named <i>name</i> such that the new account's owner public key
-              shall be <i>owner key</i> and the active public key shall be{' '}
-              <i>active key</i>.
+              As an authorized party I <i>signer</i> wish to exercise the authority of <i>creator</i> to create a new
+              account on this system named <i>name</i> such that the new account's owner public key shall be{' '}
+              <i>owner key</i> and the active public key shall be <i>active key</i>.
             </p>
           </CardBody>
         </Card>

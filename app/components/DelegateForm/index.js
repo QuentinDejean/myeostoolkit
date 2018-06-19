@@ -166,8 +166,8 @@ const FormObject = props => {
         </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
-            By executing this action you are agreeing to the EOS constitution
-            and this actions associated ricardian contract.
+            By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
+            contract.
           </p>
         </GridItem>
       </GridContainer>
@@ -210,13 +210,7 @@ const DelegateForm = props => {
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
-              render={formikProps => (
-                <FormObject
-                  {...formikProps}
-                  eosAccount={eosAccount}
-                  classes={classes}
-                />
-              )}
+              render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
           </CardBody>
         </Card>
@@ -231,27 +225,24 @@ const DelegateForm = props => {
           </CardHeader>
           <CardBody>
             <p>
-              The intent of the {'{ delegatebw }'} action is to stake tokens for
-              bandwidth and/or CPU and optionally transfer ownership.
+              The intent of the {'{ delegatebw }'} action is to stake tokens for bandwidth and/or CPU and optionally
+              transfer ownership.
               <br />
               <br />
-              As an authorized party I {'{ signer }'} wish to stake{' '}
-              {'{ stake_cpu_quantity }'} for CPU and {'{ stake_net_quantity }'}{' '}
-              for bandwidth from the liquid tokens of {'{ from }'} for the use
-              of delegatee {'{ to }'}.
+              As an authorized party I {'{ signer }'} wish to stake {'{ stake_cpu_quantity }'} for CPU and{' '}
+              {'{ stake_net_quantity }'} for bandwidth from the liquid tokens of {'{ from }'} for the use of delegatee{' '}
+              {'{ to }'}.
               <br />
               <br />
               {'{if transfer }'}
               <br />
-              It is {'{ transfer }'} that I wish these tokens to become
-              immediately owned by the delegatee.
+              It is {'{ transfer }'} that I wish these tokens to become immediately owned by the delegatee.
               <br />
               {'{/if}'}
               <br />
               <br />
-              As signer I stipulate that, if I am not the beneficial owner of
-              these tokens, I have proof that I’ve been authorized to take this
-              action by their beneficial owner(s).
+              As signer I stipulate that, if I am not the beneficial owner of these tokens, I have proof that I’ve been
+              authorized to take this action by their beneficial owner(s).
             </p>
           </CardBody>
         </Card>

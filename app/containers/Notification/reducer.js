@@ -5,12 +5,7 @@
  */
 
 import { fromJS } from 'immutable';
-import {
-  NOTIFICATION_SUCCESS,
-  NOTIFICATION_FAILURE,
-  NOTIFICATION_LOADING,
-  NOTIFICATION_CLOSE,
-} from './constants';
+import { NOTIFICATION_SUCCESS, NOTIFICATION_FAILURE, NOTIFICATION_LOADING, NOTIFICATION_CLOSE } from './constants';
 
 const initialState = fromJS({
   success: false,
