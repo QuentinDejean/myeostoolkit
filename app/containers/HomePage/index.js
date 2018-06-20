@@ -40,7 +40,7 @@ function UserProfile(props) {
                 <Schedule />
               </CardIcon>
               <h4 className={classes.cardIconTitle}>
-                Coming Soon - <small>We're working really hard!</small>
+                Coming Soon - <small>We&apos;re working really hard!</small>
               </h4>
             </CardHeader>
             <CardBody>

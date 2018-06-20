@@ -20,7 +20,7 @@ const checkDescriptor = descriptor => {
   invariant(conformsTo(descriptor, shape), '(app/utils...) injectSaga: Expected a valid saga descriptor');
 };
 
-export function injectSagaFactory(store, isValid) {
+function injectSagaFactory(store, isValid) {
   return function injectSaga(key, descriptor = {}, args) {
     if (!isValid) checkStore(store);
 
@@ -45,15 +45,15 @@ export function injectSagaFactory(store, isValid) {
     }
 
     if (!hasSaga || (hasSaga && mode !== DAEMON && mode !== ONCE_TILL_UNMOUNT)) {
+      // eslint-disable-next-line no-param-reassign
       store.injectedSagas[key] = {
         ...newDescriptor,
         task: store.runSaga(saga, args),
-      }; // eslint-disable-line no-param-reassign
     }
   };
 }
 
-export function ejectSagaFactory(store, isValid) {
+function ejectSagaFactory(store, isValid) {
   return function ejectSaga(key) {
     if (!isValid) checkStore(store);
 
@@ -73,7 +73,7 @@ export function ejectSagaFactory(store, isValid) {
   };
 }
 
-export default function getInjectors(store) {
+function getInjectors(store) {
   checkStore(store);
 
   return {
@@ -81,3 +81,9 @@ export default function getInjectors(store) {
     ejectSaga: ejectSagaFactory(store, true),
   };
 }
+
+export {
+  ejectSagaFactory,
+  injectSagaFactory
+}
+export default getInjectors

@@ -276,7 +276,7 @@ const CreateAccountForm = props => {
               <br />
               <br />
               As an authorized party I <i>signer</i> wish to exercise the authority of <i>creator</i> to create a new
-              account on this system named <i>name</i> such that the new account's owner public key shall be{' '}
+              account on this system named <i>name</i> such that the new account&apos;s owner public key shall be{' '}
               <i>owner key</i> and the active public key shall be <i>active key</i>.
             </p>
           </CardBody>

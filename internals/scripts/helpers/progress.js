@@ -8,6 +8,7 @@ const readline = require('readline');
  */
 function animateProgress(message, amountOfDots) {
   if (typeof amountOfDots !== 'number') {
+    // eslint-disable-next-line no-param-reassign
     amountOfDots = 3;
   }
 

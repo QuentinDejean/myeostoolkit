@@ -17,7 +17,7 @@ import reducer from './reducer';
 import saga from './saga';
 import submitAction from './actions';
 
-// eslint-disable-line react/prefer-stateless-function
+// eslint-disable-next-line react/prefer-stateless-function
 export class Delegate extends React.Component {
   render() {
     const { eosAccount, handleSubmit } = this.props;

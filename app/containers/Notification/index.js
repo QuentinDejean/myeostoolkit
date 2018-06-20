@@ -5,22 +5,23 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import { makeSelectNotificationSuccess } from './selectors';
-import { makeSelectNotificationFailure } from './selectors';
-import { makeSelectNotificationLoading } from './selectors';
-import { makeSelectNotificationMessage } from './selectors';
+import SweetAlert from 'react-bootstrap-sweetalert';
+import withStyles from '@material-ui/core/styles/withStyles';
+
+import {
+  makeSelectNotificationFailure,
+  makeSelectNotificationLoading,
+  makeSelectNotificationMessage,
+  makeSelectNotificationSuccess,
+} from './selectors';
 import { closeNotification } from './actions';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 
 import withStyles from "@material-ui/core/styles/withStyles";
 import SweetAlert from "react-bootstrap-sweetalert";
@@ -97,7 +98,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    closeAll: form => dispatch(closeNotification()),
+    closeAll: () => dispatch(closeNotification()),
   };
 }
 

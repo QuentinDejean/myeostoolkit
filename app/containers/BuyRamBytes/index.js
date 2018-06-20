@@ -5,24 +5,20 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import BuyRamBytesForm from 'components/BuyRamBytesForm';
+import { makeSelectEosAccount } from 'containers/Scatter/selectors';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 import submitAction from './actions';
-import BuyRamBytesForm from 'components/BuyRamBytesForm';
-import { makeSelectEosAccount } from 'containers/Scatter/selectors';
 
+// eslint-disable-next-line react/prefer-stateless-function
 export class BuyRamBytes extends React.Component {
-  // eslint-disable-line react/prefer-stateless-function
-
   render() {
     const { eosAccount, handleSubmit } = this.props;
     return (

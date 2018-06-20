@@ -5,24 +5,20 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import CreateAccountForm from 'components/CreateAccountForm';
+import { makeSelectEosAccount } from 'containers/Scatter/selectors';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 import submitAction from './actions';
-import CreateAccountForm from 'components/CreateAccountForm';
-import { makeSelectEosAccount } from 'containers/Scatter/selectors';
 
+// eslint-disable-next-line react/prefer-stateless-function
 export class CreateAccount extends React.Component {
-  // eslint-disable-line react/prefer-stateless-function
-
   render() {
     const { eosAccount, handleSubmit } = this.props;
     return (

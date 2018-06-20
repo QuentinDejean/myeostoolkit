@@ -5,14 +5,7 @@
  */
 
 import { fromJS } from 'immutable';
-import {
-  SCATTER_LOADED,
-  EOSCLIENT_LOADED,
-  CONNECT_ACCOUNT,
-  ATTACHED_ACCOUNT,
-  REMOVE_ACCOUNT,
-  DETACHED_ACCOUNT,
-} from './constants';
+import { SCATTER_LOADED, EOSCLIENT_LOADED, ATTACHED_ACCOUNT, DETACHED_ACCOUNT } from './constants';
 
 const initialState = fromJS({
   scatter: null,

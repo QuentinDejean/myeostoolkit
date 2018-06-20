@@ -24,7 +24,6 @@ import Card from 'components/Card/Card';
 import CardBody from 'components/Card/CardBody';
 import CardHeader from 'components/Card/CardHeader';
 import CardIcon from 'components/Card/CardIcon';
-import Quote from 'components/Typography/Quote';
 
 import userProfileStyles from './comingSoon';
 

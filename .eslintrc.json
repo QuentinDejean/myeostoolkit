@@ -11,6 +11,11 @@
     "jest": true,
     "es6": true
   },
+  "globals": {
+    "echo": true,
+    "exec": true,
+    "mkdir": true
+  },
   "plugins": [
     "prettier",
     "redux-saga",

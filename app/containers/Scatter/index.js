@@ -5,9 +5,7 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -20,7 +18,6 @@ import {makeSelectEosAuthority} from './selectors';
 import {scatterLoaded} from './actions';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
 
 export class Scatter extends React.Component {
   // eslint-disable-line react/prefer-stateless-function

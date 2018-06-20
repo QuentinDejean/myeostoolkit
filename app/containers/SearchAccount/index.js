@@ -5,11 +5,11 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
+import SearchAccountForm from 'components/SearchAccountForm';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { makeSelectEosAccount } from 'containers/Scatter/selectors';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -52,10 +52,6 @@ export class SearchAccount extends React.Component { // eslint-disable-line reac
     );
   }
 }
-
-SearchAccount.propTypes = {
-  // dispatch: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = createStructuredSelector({
   accounts: makeSelectSearchAccounts(),

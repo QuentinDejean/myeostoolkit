@@ -17,9 +17,8 @@ import reducer from './reducer';
 import saga from './saga';
 import submitAction from './actions';
 
+// eslint-disable-next-line react/prefer-stateless-function
 export class Transfer extends React.Component {
-  // eslint-disable-line react/prefer-stateless-function
-
   render() {
     const { eosAccount, handleSubmit } = this.props;
     return (
@@ -29,10 +28,6 @@ export class Transfer extends React.Component {
     );
   }
 }
-
-Transfer.propTypes = {
-  // dispatch: PropTypes.func.isRequired,
-};
 
 const mapStateToProps = createStructuredSelector({
   eosAccount: makeSelectEosAccount(),
