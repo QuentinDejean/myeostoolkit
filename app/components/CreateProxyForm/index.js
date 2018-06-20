@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import { compose } from 'redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 // import styled from 'styled-components';
@@ -27,31 +26,13 @@ import CustomInput from 'components/CustomInput/CustomInput';
 import Button from 'components/CustomButtons/Button';
 import Card from 'components/Card/Card';
 import CardHeader from 'components/Card/CardHeader';
-import CardText from 'components/Card/CardText';
 import CardIcon from 'components/Card/CardIcon';
 import CardBody from 'components/Card/CardBody';
-import Quote from 'components/Typography/Quote';
-
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
 
 import regularFormsStyle from 'assets/jss/regularFormsStyle';
-import switchStyle from 'assets/jss/customCheckboxRadioSwitch';
 
 const FormObject = props => {
-  const {
-    values,
-    touched,
-    errors,
-    isSubmitting,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    handleReset,
-    dirty,
-    eosAccount,
-    classes,
-  } = props;
+  const { values, touched, errors, handleChange, handleBlur, handleSubmit, eosAccount, classes } = props;
   return (
     <form>
       <GridContainer>

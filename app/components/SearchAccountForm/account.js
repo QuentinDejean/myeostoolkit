@@ -13,19 +13,7 @@ import CustomInput from 'components/CustomInput/CustomInput';
 import Button from 'components/CustomButtons/Button';
 
 const FormObject = props => {
-  const {
-    values,
-    touched,
-    errors,
-    isSubmitting,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    handleReset,
-    dirty,
-    eosAccount,
-    classes,
-  } = props;
+  const { values, touched, errors, handleChange, handleBlur, handleSubmit } = props;
   return (
     <form>
       <GridContainer>

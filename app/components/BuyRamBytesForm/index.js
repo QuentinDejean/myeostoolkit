@@ -5,16 +5,12 @@
  */
 
 import React from 'react';
-import { compose } from 'redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 // import styled from 'styled-components';
 
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Tooltip from '@material-ui/core/Tooltip';
 
 // @material-ui/icons
 import AddCircle from '@material-ui/icons/AddCircle';
@@ -33,19 +29,7 @@ import CardBody from 'components/Card/CardBody';
 import regularFormsStyle from 'assets/jss/regularFormsStyle';
 
 const FormObject = props => {
-  const {
-    values,
-    touched,
-    errors,
-    isSubmitting,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    handleReset,
-    dirty,
-    eosAccount,
-    classes,
-  } = props;
+  const { values, touched, errors, handleChange, handleBlur, handleSubmit, eosAccount } = props;
   return (
     <form>
       <GridContainer>
@@ -56,19 +40,15 @@ const FormObject = props => {
             error={errors.name}
             touched={touched.name}
             formControlProps={{
-    {
-      fullWidth: true,
-    }
-    }
+              fullWidth: true,
+            }}
             inputProps={{
-    {
-      type: 'text',
+              type: 'text',
               placeholder: 'The account that receives the RAM',
               value: values.name,
               onChange: handleChange,
               onBlur: handleBlur,
-    }
-    }
+            }}
           />{' '}
         </GridItem>{' '}
         <GridItem xs={12} sm={12} md={6}>
@@ -78,19 +58,16 @@ const FormObject = props => {
             error={errors.creator}
             touched={touched.creator}
             formControlProps={{
-    {
-      fullWidth: true,
-    }
+              fullWidth: true,
+            }}
             inputProps={{
-    {
-      type: 'text',
-      placeholder: 'Scatter account',
-      value: eosAccount,
+              type: 'text',
+              placeholder: 'Scatter account',
+              value: eosAccount,
               onChange: handleChange,
-      onBlur: handleBlur,
-      disabled: true,
-    }
-    }
+              onBlur: handleBlur,
+              disabled: true,
+            }}
           />{' '}
         </GridItem>{' '}
         <GridItem xs={12} sm={12} md={6}>
@@ -100,19 +77,15 @@ const FormObject = props => {
             error={errors.ram}
             touched={touched.ram}
             formControlProps={{
-    {
-      fullWidth: true,
-    }
-    }
+              fullWidth: true,
+            }}
             inputProps={{
-    {
-      type: 'text',
+              type: 'text',
               placeholder: 'How many bytes to purchase',
-      value: values.ram,
+              value: values.ram,
               onChange: handleChange,
               onBlur: handleBlur,
-    }
-    }
+            }}
           />{' '}
         </GridItem>{' '}
         <GridItem xs={12} sm={12} md={4}>
@@ -140,12 +113,8 @@ const validationSchema = Yup.object().shape({
 });
 
 const CreateAccountForm = props => {
-  const {
-      classes,
-      handleSubmit,
-      eosAccount,
-    } = props;
-  return ( <
+  const { classes, handleSubmit, eosAccount } = props;
+  return (
     <GridContainer>
       <GridItem xs={12} sm={12} lg={8}>
         <Card>
@@ -158,11 +127,10 @@ const CreateAccountForm = props => {
           <CardBody>
             <Formik
               initialValues={{
-      {
-        creator: '',
+                creator: '',
                 name: '',
                 ram: '8192',
-      }
+              }}
               validationSchema={validationSchema}
               onSubmit={handleSubmit}
               eosAccount={eosAccount}
@@ -204,7 +172,7 @@ const CreateAccountForm = props => {
         </Card>{' '}
       </GridItem>{' '}
     </GridContainer>
-    );
+  );
 };
 
 export default withStyles(regularFormsStyle)(CreateAccountForm);
