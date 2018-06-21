@@ -20,7 +20,6 @@ export class VoteUs extends React.Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      // eslint-disable-next-line jsx-a11y/href-no-hash
       <a href="#" onClick={handleSubmit}>
         Vote for GenerEOS
       </a>

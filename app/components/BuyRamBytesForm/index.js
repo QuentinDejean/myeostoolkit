@@ -49,8 +49,8 @@ const FormObject = props => {
               onChange: handleChange,
               onBlur: handleBlur,
             }}
-          />{' '}
-        </GridItem>{' '}
+          />
+        </GridItem>
         <GridItem xs={12} sm={12} md={6}>
           <CustomInput
             labelText="Payer"
@@ -68,8 +68,8 @@ const FormObject = props => {
               onBlur: handleBlur,
               disabled: true,
             }}
-          />{' '}
-        </GridItem>{' '}
+          />
+        </GridItem>
         <GridItem xs={12} sm={12} md={6}>
           <CustomInput
             labelText="Ram Purchase (in bytes)"
@@ -86,20 +86,20 @@ const FormObject = props => {
               onChange: handleChange,
               onBlur: handleBlur,
             }}
-          />{' '}
-        </GridItem>{' '}
+          />
+        </GridItem>
         <GridItem xs={12} sm={12} md={4}>
           <Button onClick={handleSubmit} color="rose">
-            Purchase{' '}
-          </Button>{' '}
-        </GridItem>{' '}
+            Purchase
+          </Button>
+        </GridItem>
         <GridItem xs={12} sm={12} md={8}>
           <p>
             By executing this action you are agreeing to the EOS constitution and this actions associated ricardian
-            contract.{' '}
-          </p>{' '}
-        </GridItem>{' '}
-      </GridContainer>{' '}
+            contract.
+          </p>
+        </GridItem>
+      </GridContainer>
     </form>
   );
 };
@@ -121,9 +121,9 @@ const CreateAccountForm = props => {
           <CardHeader color="warning" icon>
             <CardIcon color="warning">
               <AddCircle />
-            </CardIcon>{' '}
-            <h4 className={classes.cardIconTitle}> Buy ram bytes </h4>{' '}
-          </CardHeader>{' '}
+            </CardIcon>
+            <h4 className={classes.cardIconTitle}> Buy ram bytes </h4>
+          </CardHeader>
           <CardBody>
             <Formik
               initialValues={{
@@ -136,17 +136,17 @@ const CreateAccountForm = props => {
               eosAccount={eosAccount}
               render={formikProps => <FormObject {...formikProps} eosAccount={eosAccount} classes={classes} />}
             />
-          </CardBody>{' '}
-        </Card>{' '}
-      </GridItem>{' '}
+          </CardBody>
+        </Card>
+      </GridItem>
       <GridItem xs={12} sm={12} lg={4}>
         <Card>
           <CardHeader color="rose" icon>
             <CardIcon color="rose">
               <AccountBalance />
-            </CardIcon>{' '}
-            <h4 className={classes.cardIconTitle}> Ricardian </h4>{' '}
-          </CardHeader>{' '}
+            </CardIcon>
+            <h4 className={classes.cardIconTitle}> Ricardian </h4>
+          </CardHeader>
           <CardBody>
             <p>
               This action will attempt to reserve about {'{bytes}'}
@@ -162,15 +162,15 @@ const CreateAccountForm = props => {
               allocated. {'{buyer}'}
               acknowledges that the supply of RAM may be increased at any time up to the limits of off - the - shelf
               computer equipment and that this may result in RAM selling for less than purchase price. {'{buyer}'}
-              acknowledges that the price of RAM may increase or decrease over time according to supply and demand.{' '}
+              acknowledges that the price of RAM may increase or decrease over time according to supply and demand.
               {'{buyer}'}
               acknowledges that RAM is non - transferable. {'{buyer}'}
               acknowledges RAM currently in use by their account cannot be sold until it is freed and that freeing RAM
-              may be subject to terms of other contracts.{' '}
-            </p>{' '}
-          </CardBody>{' '}
-        </Card>{' '}
-      </GridItem>{' '}
+              may be subject to terms of other contracts.
+            </p>
+          </CardBody>
+        </Card>
+      </GridItem>
     </GridContainer>
   );
 };

@@ -24,7 +24,7 @@ module.exports = options => ({
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Transform all .js and .jsx files required somewhere with Babel
+        test: /\.(js|jsx)$/, // Transform all .js and  files required somewhere with Babel
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

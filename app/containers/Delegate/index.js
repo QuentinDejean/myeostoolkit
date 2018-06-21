@@ -29,10 +29,6 @@ export class Delegate extends React.Component {
   }
 }
 
-Delegate.propTypes = {
-  // dispatch: PropTypes.func.isRequired,
-};
-
 const mapStateToProps = createStructuredSelector({
   eosAccount: makeSelectEosAccount(),
 });

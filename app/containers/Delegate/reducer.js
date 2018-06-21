@@ -14,7 +14,6 @@ const initialState = fromJS({
 function createAccountReducer(state = initialState, action) {
   switch (action.type) {
     case DEFAULT_ACTION:
-      // console.log(action);
       return state.set('form', action.form);
     default:
       return state;

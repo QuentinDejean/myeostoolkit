@@ -26,9 +26,8 @@ import saga from './saga';
 
 import sweetAlertStyle from './sweetAlertStyle';
 
+// eslint-disable-next-line react/prefer-stateless-function
 export class Notification extends React.Component {
-  // eslint-disable-line react/prefer-stateless-function
-
   render() {
     const { loading, failure, success, message, closeAll } = this.props;
 
