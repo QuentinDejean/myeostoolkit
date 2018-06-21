@@ -23,6 +23,7 @@
     "jsx-a11y"
   ],
   "parserOptions": {
+    "allowImportExportEverywhere": true,
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {

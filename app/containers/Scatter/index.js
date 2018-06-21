@@ -11,23 +11,20 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import {makeSelectScatter} from './selectors';
-import {makeSelectEosClient} from './selectors';
-import {makeSelectEosAccount} from './selectors';
-import {makeSelectEosAuthority} from './selectors';
-import {scatterLoaded} from './actions';
+import { makeSelectEosClient, makeSelectScatter, makeSelectEosAccount, makeSelectEosAuthority } from './selectors';
+import { scatterLoaded } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
 export class Scatter extends React.Component {
   // eslint-disable-line react/prefer-stateless-function
 
-  componentDidMount(){
-    if(window.scatter) {
+  componentDidMount() {
+    if (window.scatter) {
       this.props.onScatterLoaded(window.scatter);
       window.scatter = null;
     }
-    document.addEventListener('scatterLoaded', scatterExtension => {
+    document.addEventListener('scatterLoaded', () => {
       // console.log('Scatter connected')
       this.props.onScatterLoaded(window.scatter);
       // Scatter will now be available from the window scope.
@@ -37,18 +34,20 @@ export class Scatter extends React.Component {
       // It is good practice to take this off the window once you have
       // a reference to it.
       window.scatter = null;
-    })
+    });
   }
 
   render() {
-    if(this.props.scatter) {
-      if(this.props.eosAccount)
-        return (<span>{this.props.eosAccount}<small>{this.props.eosAuthority ? ('@' + this.props.eosAuthority) : ('') }</small></span>);
-      else {
-        return ('Attach an Account')
+    if (this.props.scatter) {
+      if (this.props.eosAccount) {
+        return (
+          <span>
+            {this.props.eosAccount}
+            <small>{this.props.eosAuthority ? `@${this.props.eosAuthority}` : ''}</small>
+          </span>
+        );
       }
-    } else {
-      return ('Please install Scatter');
+      return 'Attach an Account';
     }
     return 'Please install Scatter';
   }

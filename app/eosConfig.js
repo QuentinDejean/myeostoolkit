@@ -29,9 +29,4 @@ const eosConfig = {
 };
 
 export default eosConfig;
-export {
-  scatterConfig,
-  scatterEosOptions,
-  eosConfig,
-  testnet,
-}
+export { scatterConfig, scatterEosOptions, eosConfig, testnet };

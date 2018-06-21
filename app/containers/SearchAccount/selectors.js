@@ -13,25 +13,13 @@ const selectDomain = state => state.get('SearchAccount');
  * Default selector used by Delegate
  */
 
-const makeSelectSearchName = () => createSelector(
-  selectDomain,
-  (substate) => substate.get('name')
-);
+const makeSelectSearchName = () => createSelector(selectDomain, substate => substate.get('name'));
 
-const makeSelectSearchPubkey = () => createSelector(
-  selectDomain,
-  (substate) => substate.get('pubkey')
-);
+const makeSelectSearchPubkey = () => createSelector(selectDomain, substate => substate.get('pubkey'));
 
-const makeSelectSearchAccounts = () => createSelector(
-  selectDomain,
-  (substate) => substate.get('accounts')
-);
+const makeSelectSearchAccounts = () => createSelector(selectDomain, substate => substate.get('accounts'));
 
-const makeSelectSearchLoading = () => createSelector(
-  selectDomain,
-  (substate) => substate.get('loading')
-);
+const makeSelectSearchLoading = () => createSelector(selectDomain, substate => substate.get('loading'));
 
 export default makeSelectSearchAccounts;
 export {

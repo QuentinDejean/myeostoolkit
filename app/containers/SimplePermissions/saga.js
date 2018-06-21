@@ -5,9 +5,6 @@ import { makeSelectEosAccount as EosAccount } from 'containers/Scatter/selectors
 import { makeSelectEosAuthority as EosAuthority } from 'containers/Scatter/selectors.js';
 import Form from './selectors.js';
 import { DEFAULT_ACTION } from './constants';
-import { successNotification } from 'containers/Notification/actions';
-import { failureNotification } from 'containers/Notification/actions';
-import { loadingNotification } from 'containers/Notification/actions';
 
 //
 // Get the EOS Client once Scatter loads
@@ -28,18 +25,20 @@ function* performAction() {
           auth: form.activeKey,
         },{authorization: [{actor: eosAccount, permission: eosAuth}]}) //
       }
-      if(form.ownerKey) {
-        tr.updateauth({
-          account: eosAccount,
-          permission: 'owner',
-          parent: '',
-          auth: form.ownerKey,
-        },{authorization: [{actor: eosAccount, permission: 'owner'}]})
+      if (form.ownerKey) {
+        tr.updateauth(
+          {
+            account: eosAccount,
+            permission: 'owner',
+            parent: '',
+            auth: form.ownerKey,
+          },
+          { authorization: [{ actor: eosAccount, permission: 'owner' }] }
+        );
       }
     });
     yield put(successNotification(res.transaction_id));
-
-  } catch(err) {
+  } catch (err) {
     yield put(failureNotification(err));
   }
 }
@@ -53,7 +52,5 @@ function* watchDefaultAction() {
 //
 
 export default function* rootSaga() {
-  yield all([
-    watchDefaultAction(),
-  ])
+  yield all([watchDefaultAction()]);
 }

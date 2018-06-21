@@ -12,6 +12,7 @@ import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import SweetAlert from 'react-bootstrap-sweetalert';
 import withStyles from '@material-ui/core/styles/withStyles';
+import VoteUs from 'containers/VoteUs/Loadable';
 
 import {
   makeSelectNotificationFailure,
@@ -23,13 +24,10 @@ import { closeNotification } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import SweetAlert from "react-bootstrap-sweetalert";
-import sweetAlertStyle from "./sweetAlertStyle.jsx";
-import VoteUs from "containers/VoteUs/Loadable.js";
+import sweetAlertStyle from './sweetAlertStyle';
 
-
-export class Notification extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class Notification extends React.Component {
+  // eslint-disable-line react/prefer-stateless-function
 
   render() {
     const { loading, failure, success, message, closeAll } = this.props;
@@ -62,7 +60,9 @@ export class Notification extends React.Component { // eslint-disable-line react
           <h6>{message ? `TxId: ${message}` : ''}</h6>
           <p>Thank you for using EOSToolkit.io</p>
           <h6>Your votes support continued development of these tools</h6>
-          <h5><VoteUs/></h5>
+          <h5>
+            <VoteUs />
+          </h5>
         </SweetAlert>
       );
     }
