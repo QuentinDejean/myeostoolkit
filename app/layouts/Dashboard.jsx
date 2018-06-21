@@ -44,12 +44,12 @@ import image from '../assets/img/bg.jpg';
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map(({ collapse, component, path, pathTo, redirect, views }) => {
-      if (redirect) return <Redirect from={path} to={pathTo} key={`redirect-${pathTo}`} />;
+      if (redirect) return <Redirect from={path} to={pathTo} key={`route-redirect-${path}`} />;
       if (collapse)
-        return views.map(prop => {
-          return <Route path={prop.path} component={component} key={`path-${prop.path}`} />;
+        return views.map(({ component: viewComponent, path: viewPath }) => {
+          return <Route path={viewPath} component={viewComponent} key={`route-${viewPath}`} />;
         });
-      return <Route path={path} component={component} key={`path-${path}`} />;
+      return <Route path={path} component={component} key={`route-${path}`} />;
     })}
   </Switch>
 );
@@ -61,6 +61,7 @@ class Dashboard extends React.Component {
     mobileOpen: false,
     miniActive: false,
   };
+
   componentDidMount() {
     if (navigator.platform.indexOf('Win') > -1) {
       ps = new PerfectScrollbar(this.refs.mainPanel, {
@@ -97,13 +98,13 @@ class Dashboard extends React.Component {
   sidebarMinimize = () => {
     this.setState({ miniActive: !this.state.miniActive });
   };
+
   render() {
     const { classes, ...rest } = this.props;
     const mainPanel = `${classes.mainPanel} ${cx({
       [classes.mainPanelSidebarMini]: this.state.miniActive,
       [classes.mainPanelWithPerfectScrollbar]: navigator.platform.indexOf('Win') > -1,
     })}`;
-
     return (
       <div className={classes.wrapper}>
         <Sidebar
