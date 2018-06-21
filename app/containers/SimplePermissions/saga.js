@@ -1,9 +1,10 @@
-import Eos from 'eosjs';
-import { takeLatest, call, put, select, all } from 'redux-saga/effects';
-import EosClient from 'containers/Scatter/selectors.js';
-import { makeSelectEosAccount as EosAccount } from 'containers/Scatter/selectors.js';
-import { makeSelectEosAuthority as EosAuthority } from 'containers/Scatter/selectors.js';
-import Form from './selectors.js';
+import { takeLatest, put, select, all } from 'redux-saga/effects';
+import EosClient, {
+  makeSelectEosAuthority as EosAuthority,
+  makeSelectEosAccount as EosAccount,
+} from 'containers/Scatter/selectors';
+import { failureNotification, loadingNotification, successNotification } from 'containers/Notification/actions';
+import Form from './selectors';
 import { DEFAULT_ACTION } from './constants';
 
 //
@@ -17,13 +18,16 @@ function* performAction() {
   yield put(loadingNotification());
   try {
     const res = yield eosClient.transaction(tr => {
-      if(form.activeKey) {
-        tr.updateauth({
-          account: eosAccount,
-          permission: 'active',
-          parent: 'owner',
-          auth: form.activeKey,
-        },{authorization: [{actor: eosAccount, permission: eosAuth}]}) //
+      if (form.activeKey) {
+        tr.updateauth(
+          {
+            account: eosAccount,
+            permission: 'active',
+            parent: 'owner',
+            auth: form.activeKey,
+          },
+          { authorization: [{ actor: eosAccount, permission: eosAuth }] }
+        ); //
       }
       if (form.ownerKey) {
         tr.updateauth(
